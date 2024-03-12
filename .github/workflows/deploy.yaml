@@ -1,0 +1,19 @@
+name: Deploy App
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag to play"
+        required: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      HOST: root@46.161.52.147
+
+    steps:
+      - name: DEBUG
+        run: |
+          echo "Github workspace is ${{ github.workspace }}"
